@@ -26,12 +26,13 @@ export default {
               <div>
                 <img :src="singleCard.card_images[0].image_url" :alt="singleCard.name">
               </div>
-              <div>
+              <h4>
                 {{ singleCard.name }}
-              </div>
-              <div>
+              </h4>
+              <h5>
                 {{ singleCard.archetype }}
-              </div>
+                 <!-- non tutte le carte hanno un archetipo che si fa? -->
+              </h5>
             </div>
           </div>
           
@@ -54,9 +55,14 @@ main {
   .cards-container {
     background-color: white;
     padding: 40px;
+    .my-col-20 {
+      margin-bottom: 20px;
+    }
   }
   .card {
-    padding: 15px 5px;
+    padding: 20px;
+    height:100%;
+    background-color: $mainColor;
   }
 }
 </style>
