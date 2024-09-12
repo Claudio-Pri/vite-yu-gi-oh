@@ -2,7 +2,7 @@
 export default {
   data() {
     return { 
-      message: 'Template Vite + Vue'
+      message: 'Yu-Gi-Oh Api'
     }
   }
 }
@@ -10,9 +10,11 @@ export default {
 
 <template>
   <header>
-    <h1>
+    <div class="container">
+      <h1>
       {{ message }}
-    </h1>
+      </h1>
+    </div>
   </header>
 </template>
 
@@ -20,12 +22,6 @@ export default {
 @use '../assets/scss/partials/variables' as *;
 
 header {
-  background-color: $mainBgColor;
-  text-align: center;
-  padding: 20px 0;
-}
-
-h1 {
-  color: $mainColor;
+  padding: 30px 0;
 }
 </style>
