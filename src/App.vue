@@ -22,10 +22,16 @@ export default {
     axios
         .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
         .then((res) =>{
-          console.log(res);
-          console.log(res.data.data);
-          
           this.store.allCards = res.data.data;
+        });
+    axios
+        .get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+        .then((arcRes) =>{
+          console.log(arcRes);
+          this.store.allArchetypes = arcRes.data;
+          console.log(this.store.allArchetypes);
+          
+          
         });
   },
   // 2) Dichiarazione del componente

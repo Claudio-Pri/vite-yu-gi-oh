@@ -13,7 +13,15 @@ export default {
 <template>
   <main>
     <div class="container">
-      accordion
+
+      <div class="main-select">
+        <select name="archetypes" id="archetypes">
+          <option v-for="(archetype, i) in store.allArchetypes" :key="i" :value="archetype.archetype_name">
+            {{ archetype.archetype_name }}
+          </option>
+        </select>
+      </div>
+
     </div>
     <div class="container">
       <div class="main-header">
@@ -63,6 +71,19 @@ main {
     padding: 20px;
     height:100%;
     background-color: $mainColor;
+
+    h4 {
+      color:white;
+      text-align: center;
+    }
+    
+  }
+  .main-select {
+    padding:15px;
+    select {
+      padding:15px;
+
+    }
   }
 }
 </style>
