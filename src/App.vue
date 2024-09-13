@@ -15,7 +15,6 @@ export default {
   data() {
     return { 
       store: store,
-      allCards: [],
     }
   },
   created() {
@@ -40,6 +39,17 @@ export default {
     AppMain,
   },
   methods: {
+   refreshCards() {
+      if(this.store.selectedArchetype != '') {
+        axios
+        .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0&' + 'archetype=' + this.store.selectedArchetype)
+        .then((res) =>{
+          this.store.allCards = res.data.data;
+          console.log(res);
+        });
+      }
+      
+    }
   },
   
 }
@@ -50,7 +60,7 @@ export default {
     <!-- 3) Utilizzo del componente -->
     <AppHeader />
 
-    <AppMain />
+    <AppMain @changeSelected="refreshCards()"/>
     
   </div>
 </template>

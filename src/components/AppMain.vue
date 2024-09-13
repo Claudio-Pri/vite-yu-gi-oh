@@ -15,7 +15,8 @@ export default {
     <div class="container">
 
       <div class="main-select">
-        <select name="archetypes" id="archetypes">
+        <select name="archetypes" id="archetypes" v-model="store.selectedArchetype" @change="$emit('changeSelected')">
+          <option value="">Seleziona un archetipo</option>
           <option v-for="(archetype, i) in store.allArchetypes" :key="i" :value="archetype.archetype_name">
             {{ archetype.archetype_name }}
           </option>
@@ -71,10 +72,11 @@ main {
     padding: 20px;
     height:100%;
     background-color: $mainColor;
+    text-align: center;
 
     h4 {
       color:white;
-      text-align: center;
+      
     }
     
   }
